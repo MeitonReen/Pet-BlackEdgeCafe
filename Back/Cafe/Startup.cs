@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +27,7 @@ using Microsoft.OpenApi.Models;
 using Serilog;
 using System;
 using System.IO;
+using System.Net;
 using System.Reflection;
 
 namespace Cafe
@@ -232,9 +234,18 @@ namespace Cafe
 				setup.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 			});*/
 			#endregion
+
+			services.Configure<ForwardedHeadersOptions>(options =>
+			{
+				options.ForwardedHeaders =
+					ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+				options.KnownProxies.Add(IPAddress.Parse("172.17.0.3"));
+			});
 		}
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
+			app.UseForwardedHeaders();
+
 			app.UseAuthentication();//fill claims
 
 			app.UseShareUserIdForLoggingToEntirePipeline();//share userId from claims for logging
