@@ -1,0 +1,67 @@
+
+.operations-on-dish-in-cart {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "operation-add"
+    "operation-delete"
+    "operation-delete-all";
+  align-self: start;
+  row-gap: 0.3rem;
+}
+
+.operations-on-dish-in-cart__operation {
+  cursor: pointer;
+  height: 1.1rem;
+  width: 2.7rem;
+  background-size: contain;
+  align-self: center;
+  background-repeat: no-repeat;
+}
+
+.operations-on-dish-in-cart__operation-add {
+  background-image: url(../../images/icons/dish-add.svg);
+}
+
+.operations-on-dish-in-cart__operation-delete {
+  background-image: url(../../images/icons/dish-delete.svg);
+}
+
+.operations-on-dish-in-cart__operation-delete-all {
+  background-image: url(../../images/icons/dish-delete-all.svg);
+}
+
+.operations-on-dish-in-cart__operation-add:hover {
+  background-image: url(../../images/icons/dish-add-hover.svg);
+}
+
+.operations-on-dish-in-cart__operation-delete:hover {
+  background-image: url(../../images/icons/dish-delete-hover.svg);
+}
+
+.operations-on-dish-in-cart__operation-delete-all:hover {
+  background-image: url(../../images/icons/dish-delete-all-hover.svg);
+}
+
+.operations-on-dish-in-cart__count-dishes {
+  width: height;
+  text-align: center;
+}
+/*
+.container {
+  width: 100%;
+  padding-top: 100%; 
+  position: relative; 
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 0.1rem;
+}
+
+.text {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}*/

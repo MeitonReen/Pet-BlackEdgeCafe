@@ -1,0 +1,26 @@
+.booking-tables__cafe-layout {
+  display: block;
+  object-fit: contain;
+  width: 100%;
+  height: 99.8%;
+  overflow: auto;
+}
+.booking-tables__table {
+  font-family: Chalk-cyrillic;
+  /* font-size: 0.2rem; */
+}
+.booking-tables__table:hover {
+  fill: rgb(150, 150, 150);
+  cursor: pointer;
+}
+.booking-tables__table_is-booked {
+  fill: rgb(187, 84, 84);
+  cursor: unset;
+}
+.booking-tables__table_is-booked-by-client {
+  fill: rgb(100, 100, 100);
+}
+.booking-tables__table_is-booked-by-client:hover {
+  fill: rgb(150, 150, 150);
+  cursor: pointer;
+}

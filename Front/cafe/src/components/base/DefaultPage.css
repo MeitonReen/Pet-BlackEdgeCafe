@@ -1,0 +1,50 @@
+.default-page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header" 
+    "body"
+    "footer";
+  height: 100%;
+}
+.default-page__header {
+  grid-area: header;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title"
+    "main";
+  background-color: black;
+  box-shadow: 0 0 12px 12px black;
+}
+
+.default-page__header_sticky {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+}
+
+.default-page__header-title {
+  grid-area: title;
+  justify-self: center;
+  
+  font-family: Chalk-title;
+  font-size: 3rem;
+}
+.default-page__header-main {
+  grid-area: main;
+}
+.default-page__body {
+  grid-area: body;
+  height: 100%;
+  overflow: auto;
+  justify-self: stretch;
+  position: relative;
+  z-index: 14;
+}
+.default-page__footer {
+  grid-area: footer;
+  height: 100%;
+  position: relative;
+  z-index: 14;
+}

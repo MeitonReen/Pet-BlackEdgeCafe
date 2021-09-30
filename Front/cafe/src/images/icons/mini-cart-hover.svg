@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 21.529163 15.400016"
+   height="15.400016mm"
+   width="21.529163mm">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <ellipse
+       ry="2.000001"
+       rx="2"
+       cy="12.900016"
+       cx="7.8999991"
+       id="path835"
+       style="fill:none;stroke:#ffffff;stroke-width:0.999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke" />
+    <ellipse
+       style="fill:none;stroke:#ffffff;stroke-width:0.999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path835-4"
+       cx="16.4"
+       cy="12.900016"
+       rx="2"
+       ry="2.000001" />
+    <path
+       id="path864"
+       d="m 0.40000001,0.40001574 c 1.66693129,0 3.33359789,0 4.16679889,1.50016216 C 5.4,3.4003401 5.4,6.4002801 5.7334723,7.9001479 c 0.3334723,1.4998677 1.0001256,1.4998677 3.1668292,1.4998677 2.1667035,0 5.8332965,0 9.4996985,0"
+       style="fill:none;stroke:#ffffff;stroke-width:0.8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path872"
+       d="m 5.9291667,7.4000156 c 4.1168923,0 8.2335343,0 10.4500583,-0.1666632 2.216524,-0.1666631 2.533182,-0.4999896 3.166501,-1.4999672 0.63332,-0.9999777 1.583295,-2.6666109 1.583437,-3.4999902 1.42e-4,-0.8333793 -0.949833,-0.8333793 -3.483192,-0.8333793 -2.533358,0 -6.649918,0 -10.7668102,0"
+       style="fill:none;stroke:#ffffff;stroke-width:0.8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

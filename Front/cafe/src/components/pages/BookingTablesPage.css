@@ -1,0 +1,24 @@
+.booking-tables-page {
+  font-family: Chalk-cyrillic;
+  height: 100vh;
+}
+
+.booking-tables-page__body {
+  box-sizing: border-box;
+  padding: 1rem 0 0 0;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "main aside";
+  width: 100%;
+  height: 100%;
+}
+.booking-tables-page__aside {
+  grid-area: aside;
+}
+.booking-tables-page__main {
+  grid-area: main;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}

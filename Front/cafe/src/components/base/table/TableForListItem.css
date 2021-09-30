@@ -1,0 +1,20 @@
+.table-for-list-item {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "table-number"
+        "number-of-seats";
+}
+
+.table-for-list-item__text {
+    margin: 0;
+}
+
+.table-for-list-item__table-number {
+    justify-self: center;
+}
+
+.table-for-list-item__number-of-seats {
+    text-align: center;
+    white-space: pre-wrap;
+}

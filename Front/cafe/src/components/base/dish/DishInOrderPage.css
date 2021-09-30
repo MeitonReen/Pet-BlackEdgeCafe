@@ -1,0 +1,33 @@
+.dish-in-order-page {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "dish-image operations" "dish-details-button dish-details-button";
+  width: 12vw;
+  height: 14vw;
+  row-gap: 1.5rem;
+}
+
+.dish-in-order-page__dish-image {
+  grid-area: dish-image;
+  display: block;
+  box-sizing: border-box;
+  padding: 0 0 0.2rem 0;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  filter: drop-shadow(-10px 10px 5px black);
+}
+
+.dish-in-order-page__dish-image_operation-add {
+  cursor: pointer;
+}
+
+.dish-in-order-page__operations {
+  grid-area: operations;
+}
+
+.dish-in-order-page__dish-details-button {
+  grid-area: dish-details-button;
+}

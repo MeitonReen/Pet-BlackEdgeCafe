@@ -1,0 +1,9 @@
+
+.border-squirckle {
+  padding: 0.2rem;
+ 
+  border-width: 0.1rem;
+  border-color: rgb(174, 170, 170);
+  border-style: solid;
+  border-radius: 1rem;
+}

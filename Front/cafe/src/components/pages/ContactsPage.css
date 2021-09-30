@@ -1,0 +1,36 @@
+.contacts-page {
+  font-family: Chalk-cyrillic;
+  height: 100vh;
+}
+
+.contacts-page__body {
+  font-size: 1.5rem;
+  max-width: 100%;
+  padding: 3rem 2rem 0 2rem;
+  word-spacing: 0.5rem;
+  white-space: break-spaces;
+}
+
+.contacts-page__work-shedule-title {
+  margin: 0;
+}
+.contacts-page__work-shedule-text {
+  text-align: justify;
+  margin: 0;
+}
+.contacts-page__contacts-title {
+  margin: 2rem 0 0 0;
+}
+.contacts-page__contacts-table {
+  border-collapse: collapse;
+}
+.contacts-table__vertical-gap {
+  width: 2rem;
+}
+.contacts-table__horizon-gap {
+  height: 2rem;
+}
+
+
+
+

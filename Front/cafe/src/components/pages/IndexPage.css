@@ -1,0 +1,47 @@
+.index-page {
+  height: 100vh;
+}
+.index-page__body {
+  font-family: Chalk-cyrillic;
+}
+
+.index-page__title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 10rem 0 0 0;
+}
+.index-page__text {
+  margin: 0 0 0 5rem;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.index-page__text:hover {
+  color:rgb(255, 255, 255);
+}
+
+/*---------------------------*/
+.index-page__logo {
+  align-self: center;
+  grid-area: logo;
+  margin-block: 0;
+}
+.index-page__main {
+  grid-area: main;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.07fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    'logo title'
+    'images-gallery images-gallery';
+  justify-items: center;
+  align-content: start;
+}
+
+.index-page__images-gallery {
+  overflow: auto;
+  display: flex;/*Иначе overflow: auto не работает и картинка пробивает дно*/
+  /*Почему иначе впихнуть картинку в оставшееся пространство флекс бокса он не может я пока не понял*/
+  grid-area: images-gallery;
+}
+

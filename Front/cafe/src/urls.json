@@ -1,0 +1,50 @@
+{
+	"pages":"/pages",
+	"registration": "/pages/registration",
+	"login": "/pages/login",
+	"index": "/pages/index",
+	"about": "/pages/about",
+	"gallery": "/pages/gallery",
+	"menu": "/pages/menu",
+	"contacts": "/pages/contacts",
+	"job": "/pages/job",
+	"createAnOrder": "/pages/create-an-order",
+	"cart": "/pages/cart",
+	"myOrders": "/pages/my-orders",
+	"payment": "/pages/payment",
+	"bookindTables": "/pages/booking-tables",
+	"dishDetails": "/pages/dish-details",
+	"selectTable": "/pages/select-table",
+	"api": {
+		"dishDetails":"/api/v1/menu/dishes/details/",
+		"login":"/api/v1/account/login",
+		"registration":"/api/v1/account/registration",
+		"bookedTables": "/api/v1/booked-tables",
+		"tables":"/api/v1/tables",
+		"bookedTablesIdsWithMarkIsBookedByClient":
+			"/api/v1/booked-tables/tableids-with-marks-is-booked-by-client",
+			
+		"menu": "/api/v1/menu",
+		"menuIncludingPromocodes":"/api/v1/menu/dishes-including-applied-promocodes",
+		"dishIdsByCategories": "/api/v1/menu/dishids-by-categories",
+		"cart": "/api/v1/cart",
+		"tableIdInCart": "/api/v1/cart/table-id",
+		"miniCart": "/api/v1/cart/mini-cart",
+
+		"dishInCart": "/dish",
+		"dishesInCart": "/api/v1/cart/dishes",
+
+		"createAnOrderPage": "/api/v1/create-an-order-page",
+		"cookingStatus": "/api/v1/cart/cooking-status",
+		"order": "/api/v1/orders",
+		"createOrderFromCart": "/api/v1/orders/create-order-from-cart",
+		"ordersOnTables":"/api/v1/orders/orders-on-tables",
+		"promocodes":"/api/v1/cart/promocodes",
+
+		"cartDish": "/api/v1/pages/cart/dish",
+		"orders": "/api/v1/pages/orders",
+		"payment": "/api/v1/pages/payment",
+		"selectTable": "/api/v1/pages/select-table"
+	},
+	"serverUrl": "http://localhost:5000"
+}

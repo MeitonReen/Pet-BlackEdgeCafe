@@ -1,0 +1,26 @@
+.registration {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+.registration__form {
+  display: grid;
+  height: min-content;
+  width: min-content;
+  font-family: Chalk-cyrillic;
+  font-size: 2rem;
+}
+.registration__text {
+  font-family: inherit;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.registration__button-registration {
+  margin-top: 1rem;
+}
+.registration__error {
+  white-space: pre-wrap;
+  color: rgb(187, 84, 84);
+}

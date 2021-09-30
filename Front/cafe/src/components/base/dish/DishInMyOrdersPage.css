@@ -1,0 +1,16 @@
+.dish-in-my-order-page {
+  display: grid;
+  grid-template-columns:
+    auto 1fr;
+  grid-template-areas:
+    "quantity dish-details-button";
+  column-gap: 0.5rem;
+}
+
+.dish-in-my-order-page__quantity {
+  grid-area: quantity;
+}
+
+.dish-in-my-order-page__dish-details-button {
+  grid-area: dish-details-button;
+}

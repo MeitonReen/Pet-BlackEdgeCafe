@@ -1,0 +1,36 @@
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 1.2rem;
+  font-family: Chalk-cyrillic;
+  justify-content: center;
+  column-gap: 1.7rem;
+}
+
+.nav-menu__item {
+  text-align: center;
+}
+
+.nav-menu__item_a {
+  display: block;
+  color:rgb(210, 210, 210);
+}
+
+.nav-menu__item_a:link {
+  text-decoration: none;
+  color:rgb(210, 210, 210);
+}
+.nav-menu__item_a:visited {
+  color:rgb(210, 210, 210);
+}
+.nav-menu__item_a:hover {
+  cursor: pointer;
+  background-image: url(../../images/icons/underline.svg);
+  background-size: 133% 25%;
+  background-repeat: no-repeat;
+  background-position: left 0% bottom -5%;
+}

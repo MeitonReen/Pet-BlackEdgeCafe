@@ -1,0 +1,31 @@
+.login {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+.login__form {
+  display: grid;
+  height: min-content;
+  width: min-content;
+  font-family: Chalk-cyrillic;
+  font-size: 2rem;
+}
+.login__text {
+  font-family: inherit;
+  font-size: 1.5rem;
+}
+
+.login-buttons {
+  white-space: nowrap;
+}
+.login__button-enter {
+  margin-top: 1rem;
+}
+.login__button-redirect-to-registration {
+  display: inline;
+  margin-top: 1rem;
+}
+.login__access-denied {
+  color: rgb(187, 84, 84);
+}

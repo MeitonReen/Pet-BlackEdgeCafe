@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'Chalk-title';
+  src: url('./fonts/woff2/FrederickatheGreat-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chalk2';
+  src: url('./fonts/woff2/FFF Tusj.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chalk-title-cyrillic';
+  src: url('./fonts/woff2/Chalk cyrillic freehand.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chalk-cyrillic';
+  src: url('./fonts/woff2/LC Chalk.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.chalk-underline {
+  background-image: url(./images/icons/underline.svg);
+  background-size: 133% 27%;
+  background-repeat: no-repeat;
+  background-position: left 0% bottom 0%;
+}
+
+
+/*
+
+@font-face {
+  font-family: 'Check1';
+  src: url('./fonts/woff2new/Brush font one.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Check2';
+  src: url('./fonts/woff2new/DSNote.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Check3';
+  src: url('./fonts/woff2new/Lemon Tuesday.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Check4';
+  src: url('./fonts/woff2new/PFLiberaPro-Reg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Check5';
+  src: url('./fonts/woff2new/pwchalk.medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Check6';
+  src: url('./fonts/woff2new/Solena-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Check7';
+  src: url('./fonts/woff2new/Vladovsky.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*/
+
+.page {
+  box-sizing: border-box;
+  background-color: black;
+  font-size: 1rem;
+  font-family: Console;
+  color: rgb(210, 210, 210);
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(50, 50, 50);
+  border-radius: 0.2rem;
+}
+
+
+.a:link {
+  text-decoration: none;
+  color:rgb(210, 210, 210);
+}
+.a:visited {
+  color:rgb(210, 210, 210);
+}
+
+.input {
+  background-color: black;
+  color: rgb(210, 210, 210);
+  border: 0.1rem solid rgb(210, 210, 210);
+  font-family: Consolas;
+  font-size: 1rem;
+}
+.input:focus {
+  border: 0.1rem solid white;
+  outline: none;
+}
+
+.button {
+  outline: none;
+  background-color: black;
+  color: rgb(210, 210, 210);
+  border: 0.1rem solid rgb(210, 210, 210);
+  font-family: Consolas;
+  font-size: 1rem;
+}
+.button:hover {
+  border-color: white;
+  color: rgb(230, 230, 230);
+  cursor: pointer;
+}
+.button:active {
+  background-color: rgb(210, 210, 210);
+  color: black;
+}

@@ -1,0 +1,56 @@
+.mini-cart {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  grid-template-areas:
+    "quantity-dishes-in-cart"
+    "icon"
+    "amount-cart"
+    "amount-cart-including-promocodes";
+  align-items: center;
+  justify-items: center;
+}
+
+.mini-cart__link-to-cart {
+  grid-area: icon;
+  align-self: center;
+
+}
+.mini-cart__icon {
+  width: 5rem;
+  height: 2.2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../images/icons/mini-cart.svg);
+  background-position: center;
+}
+
+.mini-cart__icon:hover {
+  background-image: url(../../images/icons/mini-cart-hover.svg);
+}
+
+.mini-cart__text {
+  margin: 0;
+}
+
+.mini-cart__quantity-dishes-in-cart {
+  grid-area: quantity-dishes-in-cart;
+  margin: 0 0 0 0.7rem;
+}
+.mini-cart__amount-cart {
+  grid-area: amount-cart;
+  font-size: 0.8rem;
+  margin: 0.3rem 0 0 0.2rem;
+}
+
+.mini-cart__amount-cart-including-promocodes {
+  grid-area: amount-cart-including-promocodes;
+  font-size: 0.8rem;
+
+}
+
+.mini-cart__item_strikethrough {
+  color: rgb(187, 84, 84);
+  text-decoration: line-through;
+}
+

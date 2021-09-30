@@ -1,0 +1,30 @@
+.my-orders-page {
+  font-family: Chalk-cyrillic;
+  height: 100vh;
+}
+
+.my-orders-page__body {
+  margin: 1rem 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "dishes-in-select-order orders-on-select-table tables";
+  justify-items: center;
+}
+
+.my-orders-page__dishes-in-select-order {
+  grid-area: dishes-in-select-order;
+}
+.my-orders-page__orders-on-select-table {
+  grid-area: orders-on-select-table;
+}
+
+.my-orders-page__tables {
+  grid-area: tables;
+}
+
+.my-orders-page__title-if-empty {
+  margin: 1rem 0 0 0;
+  text-align: center;
+  font-size: 1.7rem;
+}

@@ -1,0 +1,14 @@
+.shadow-over {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.underline {
+  background-image: url(./images/icons/underline.svg);
+  background-size: 133% 25%;
+  background-repeat: no-repeat;
+  background-position: left 0% bottom -5%;
+}

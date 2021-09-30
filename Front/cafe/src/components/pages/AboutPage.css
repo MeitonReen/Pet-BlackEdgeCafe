@@ -1,0 +1,8 @@
+.about-page {
+  height: 100vh;
+}
+
+.about-page__images-gallery {
+  box-sizing: border-box;
+  height: 100%;
+}
