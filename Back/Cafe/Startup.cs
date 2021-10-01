@@ -6,7 +6,9 @@ using Cafe.Databases.Identity.DI;
 using Cafe.Databases.Identity.Model;
 using Cafe.Infrastructure;
 using Cafe.Infrastructure.ApplicationSettings.Root;
+using Cafe.Infrastructure.Authentication;
 using Cafe.Infrastructure.DI;
+using Cafe.Infrastructure.EFCore;
 using Cafe.Infrastructure.ETagCache.Databases.Contexts.Implementations;
 using Cafe.Infrastructure.ETagCache.DI;
 using Cafe.Infrastructure.OpenAPI;
@@ -70,36 +72,8 @@ namespace Cafe
 			#endregion
 
 			#region Authentification & Authorization
-			CookieBuilder authCookieBuilder = new()
-			{
-				Name = _appSettings.Constants.AuthCookieName,
-				SameSite = SameSiteMode.Lax,
-				HttpOnly = true,
-				Path = "/",
-				SecurePolicy = CookieSecurePolicy.Always,
-				MaxAge = new TimeSpan(3, 0, 0, 0)
-			};
-			services.AddSingleton<CookieBuilder>(authCookieBuilder);
+			services.AddCafeCookieAuthentication(_appSettings);
 
-			services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-				.AddCookie(options =>
-				{
-					options.Cookie = authCookieBuilder;
-					options.Events.OnRedirectToLogin = context =>//Not authentificated, authorization denied
-					{
-						context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-
-						return context.Response.WriteAsJsonAsync(new ErrorDTO("Access denied"));
-					};
-					options.Events.OnRedirectToAccessDenied = context =>//Authentificated, authorization denied
-					{
-						UserService.UnsetCookie(context.Response, authCookieBuilder.Name,
-							authCookieBuilder.BuildFromSelf());
-
-						context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-						return context.Response.WriteAsJsonAsync(new ErrorDTO("Bad cookie"));
-					};
-				});
 			services.AddAuthorization(conf =>
 				conf.DefaultPolicy = new AuthorizationPolicyBuilder(CookieAuthenticationDefaults
 					.AuthenticationScheme)
@@ -108,7 +82,6 @@ namespace Cafe
 						.AddRequirements(new UserIsExists())
 						.Build()
 			);
-
 			services.AddScoped<IAuthorizationHandler, UserIsExistsHandler>();//Use EFCore -> Scoped
 			#endregion
 
