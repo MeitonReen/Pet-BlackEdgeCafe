@@ -1,4 +1,4 @@
-﻿using Cafe.Infrastructure.DI;
+﻿using Cafe.Infrastructure.EFCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

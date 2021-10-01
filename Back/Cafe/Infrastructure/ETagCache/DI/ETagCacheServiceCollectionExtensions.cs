@@ -1,4 +1,4 @@
-﻿using Cafe.Infrastructure.DI;
+﻿using Cafe.Infrastructure.EFCore;
 using Cafe.Infrastructure.ETagCache.Databases.Contexts.Interfaces;
 using Cafe.Infrastructure.ETagCache.Shared;
 using Microsoft.Extensions.DependencyInjection;
