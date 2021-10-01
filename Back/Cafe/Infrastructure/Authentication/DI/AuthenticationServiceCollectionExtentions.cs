@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Cafe.Infrastructure.Authentication
+namespace Cafe.Infrastructure.Authentication.DI
 {
 	public static class AuthenticationServiceCollectionExtentions
 	{

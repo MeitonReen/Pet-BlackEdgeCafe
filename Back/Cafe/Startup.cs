@@ -61,7 +61,6 @@ namespace Cafe
 
 			services.AddDbContextScopedAsT<CafeSqliteContext, CafeDatabase>();
 
-			#region IdentityCoreWithEFCore
 			services.AddIdentityEFCoreScopedAsT<User, IdentitySqliteContext, IdentityDatabase>(
 				indentityOpts =>
 			{
@@ -69,13 +68,9 @@ namespace Cafe
 				indentityOpts.Password.RequireNonAlphanumeric = false;
 				indentityOpts.Password.RequireUppercase = false;
 			});
-			#endregion
 
-			#region Authentification & Authorization
 			services.AddCafeCookieAuthentication(_appSettings);
-
 			services.AddCafeAuthorizationDefault(_appSettings);
-			#endregion
 
 			services.AddControllers();
 

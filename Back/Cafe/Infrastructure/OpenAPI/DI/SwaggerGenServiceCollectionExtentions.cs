@@ -12,89 +12,91 @@ namespace Cafe.Infrastructure.DI
 {
 	public static class SwaggerGenServiceCollectionExtentions
 	{
-		private static AppSettings _appSettings = null;
 		public static void AddSwaggerGenForCafeAPIv1(this IServiceCollection services,
 			AppSettings appSettings)
 		{
-			_appSettings = appSettings;
-			services.AddSwaggerGen(OptionsActionV1);
+			services.AddSwaggerGen(CreateConfiguratorSwaggerOptionsV1(appSettings));
 		}
-		private static void OptionsActionV1(SwaggerGenOptions options)
+		private static Action<SwaggerGenOptions> CreateConfiguratorSwaggerOptionsV1(
+			AppSettings appSettings)
 		{
-			options.SwaggerDoc("v1", new OpenApiInfo
+			return new Action<SwaggerGenOptions>(options =>
 			{
-				Title = "CafeAPI",
-				Version = "1.0.0"
-			});
-			var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-			var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-
-			options.IncludeXmlComments(xmlPath);
-
-			options.AddServer(new OpenApiServer
-			{
-				Url = _appSettings.Constants.ServerUrlOpenAPI
-			});
-			;
-			var SecurityScheme = new OpenApiSecurityScheme()
-			{
-				Type = SecuritySchemeType.ApiKey,
-				Name = _appSettings.Constants.AuthCookieName,
-				In = ParameterLocation.Cookie,
-				Reference = new OpenApiReference
+				options.SwaggerDoc("v1", new OpenApiInfo
 				{
-					Type = ReferenceType.SecurityScheme,
-					Id = _appSettings.Constants.AuthCookieName
-				}
-			};
-			OpenApiSecurityRequirement SecurityRequirement = new()
-			{
-				{ SecurityScheme, Array.Empty<string>() }
-			};
+					Title = "CafeAPI",
+					Version = "1.0.0"
+				});
+				var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+				var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
-			options.OperationFilter<OpenAPIInternalServerError>();
-			options.OperationFilter<OpenAPIUnauthorized>();
-			options.OperationFilter<OpenAPIOperationsSecurityFilter>();
-			options.OperationFilter<OpenAPIDefineSetCookieHeaderFilter>();
-			options.OperationFilter<OpenAPIDefineAntiforgeryTokenHeaderFilter>();
-			options.OperationFilter<OpenAPIETagCache>();
+				options.IncludeXmlComments(xmlPath);
 
-			options.AddSecurityDefinition(SecurityScheme.Reference.Id, SecurityScheme);
-			options.AddSecurityRequirement(SecurityRequirement);
+				options.AddServer(new OpenApiServer
+				{
+					Url = appSettings.Constants.ServerUrlOpenAPI
+				});
+				;
+				var SecurityScheme = new OpenApiSecurityScheme()
+				{
+					Type = SecuritySchemeType.ApiKey,
+					Name = appSettings.Constants.AuthCookieName,
+					In = ParameterLocation.Cookie,
+					Reference = new OpenApiReference
+					{
+						Type = ReferenceType.SecurityScheme,
+						Id = appSettings.Constants.AuthCookieName
+					}
+				};
+				OpenApiSecurityRequirement SecurityRequirement = new()
+				{
+					{ SecurityScheme, Array.Empty<string>() }
+				};
 
-			options.CustomOperationIds(MethodDescription =>
-			{
-					//"Cafe.Controllers.Account.AccountController.Login (Cafe)"
-					//<-- operationid == login
-					string ActionMethodName = MethodDescription.ActionDescriptor.DisplayName;
+				options.OperationFilter<OpenAPIInternalServerError>();
+				options.OperationFilter<OpenAPIUnauthorized>();
+				options.OperationFilter<OpenAPIOperationsSecurityFilter>();
+				options.OperationFilter<OpenAPIDefineSetCookieHeaderFilter>();
+				options.OperationFilter<OpenAPIDefineAntiforgeryTokenHeaderFilter>();
+				options.OperationFilter<OpenAPIETagCache>();
 
-				string operationid = ActionMethodName[(ActionMethodName.LastIndexOf('.') + 1)..];
-				operationid = operationid.Substring(0, operationid.LastIndexOf(' '));
+				options.AddSecurityDefinition(SecurityScheme.Reference.Id, SecurityScheme);
+				options.AddSecurityRequirement(SecurityRequirement);
 
-				operationid = char.ToLowerInvariant(operationid[0]) + operationid[1..];
+				options.CustomOperationIds(MethodDescription =>
+				{
+				//"Cafe.Controllers.Account.AccountController.Login (Cafe)"
+				//<-- operationid == login
+				string ActionMethodName = MethodDescription.ActionDescriptor.DisplayName;
 
-				return operationid;
-			});
+					string operationid = ActionMethodName[(ActionMethodName.LastIndexOf('.') + 1)..];
+					operationid = operationid.Substring(0, operationid.LastIndexOf(' '));
 
-			//Groupoing by root resource
-			//Examples:
-			//api/v1/orders/orders-on-tables
-			//<-- Orders
-			//api/v1/menu/dishes/details/{dishid}
-			//<-- Menu
-			options.TagActionsBy(api =>
-			{
-					//api/v1/rootResource/...
-					//<-- tagsForOperation[] { rootResource }
-					string rootResource = api.RelativePath.Replace("api/v1/", "");
-				int lenghtSubstr = rootResource.IndexOf('/');
-				lenghtSubstr = lenghtSubstr != -1 ? lenghtSubstr : rootResource.Length;
+					operationid = char.ToLowerInvariant(operationid[0]) + operationid[1..];
 
-				rootResource = rootResource.Substring(0, lenghtSubstr);
+					return operationid;
+				});
 
-				rootResource = char.ToUpperInvariant(rootResource[0]) + rootResource[1..];
+				//Groupoing by root resource
+				//Examples:
+				//api/v1/orders/orders-on-tables
+				//<-- Orders
+				//api/v1/menu/dishes/details/{dishid}
+				//<-- Menu
+				options.TagActionsBy(api =>
+				{
+				//api/v1/rootResource/...
+				//<-- tagsForOperation[] { rootResource }
+				string rootResource = api.RelativePath.Replace("api/v1/", "");
+					int lenghtSubstr = rootResource.IndexOf('/');
+					lenghtSubstr = lenghtSubstr != -1 ? lenghtSubstr : rootResource.Length;
 
-				return new string[] { rootResource };
+					rootResource = rootResource.Substring(0, lenghtSubstr);
+
+					rootResource = char.ToUpperInvariant(rootResource[0]) + rootResource[1..];
+
+					return new string[] { rootResource };
+				});
 			});
 		}
 	}

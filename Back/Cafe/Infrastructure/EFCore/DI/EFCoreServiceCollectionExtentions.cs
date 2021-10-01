@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Cafe.Infrastructure.EFCore
+namespace Cafe.Infrastructure.EFCore.DI
 {
 	public static class EFCoreServiceCollectionExtentions
 	{
