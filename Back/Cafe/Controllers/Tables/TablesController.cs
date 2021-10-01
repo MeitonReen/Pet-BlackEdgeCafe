@@ -1,7 +1,7 @@
 ﻿using Cafe.Databases.Cafe.Context.Interfaces;
-using Cafe.Model.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
+using Cafe.Infrastructure;
 
 namespace Cafe.Controllers.Tables
 {

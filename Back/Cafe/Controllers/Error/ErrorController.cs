@@ -1,4 +1,4 @@
-﻿using Cafe.Model.Shared;
+﻿using Cafe.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cafe.Controllers.Error

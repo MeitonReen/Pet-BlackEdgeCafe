@@ -1,7 +1,7 @@
-﻿using Cafe.Infrastructure.ETagCache.Attributes;
+﻿using Cafe.Infrastructure;
+using Cafe.Infrastructure.ETagCache.Attributes;
 using Cafe.Infrastructure.HandlersChain;
 using Cafe.Model.DTOs;
-using Cafe.Model.Shared;
 using Cafe.Model.TablesResources.Tables;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

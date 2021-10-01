@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Cafe.Infrastructure.EFCore.DI
+namespace Cafe.Infrastructure.EFCoreProfiler.DI
 {
 	public static class EFCoreProfilerServiceCollectionExtentions
 	{

@@ -5,7 +5,6 @@ using Cafe.Infrastructure.HandlersChain;
 using Cafe.Model.BookedTablesResources.BookedTables;
 using Cafe.Model.BookedTablesResources.BookedTables.Verificators;
 using Cafe.Model.DTOs;
-using Cafe.Model.Shared;
 using Cafe.Model.Shared.Processing;
 using Cafe.Model.Shared.Returns;
 using Microsoft.AspNetCore.Http;

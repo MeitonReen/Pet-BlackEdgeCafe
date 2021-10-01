@@ -1,11 +1,11 @@
 ﻿
+using Cafe.Infrastructure;
 using Cafe.Infrastructure.ETagCache.Attributes;
 using Cafe.Infrastructure.ETagCache.Attributes.AttributeSpecParams;
 using Cafe.Infrastructure.HandlersChain;
 using Cafe.Model.DTOs;
 using Cafe.Model.OrdersResources.Orders;
 using Cafe.Model.OrdersResources.Orders.Verificators;
-using Cafe.Model.Shared;
 using Cafe.Model.Shared.Processing;
 using Cafe.Model.Shared.Verificators;
 using Microsoft.AspNetCore.Http;

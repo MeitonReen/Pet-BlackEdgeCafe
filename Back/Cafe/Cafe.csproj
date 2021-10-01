@@ -54,6 +54,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Infrastructure\ForwardedHeaders\DI\" />
 		<Folder Include="wwwroot\" />
 	</ItemGroup>
 

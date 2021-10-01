@@ -1,11 +1,12 @@
 ﻿using Cafe.Infrastructure.ApplicationSettings.Root;
+using Cafe.Model.Shared;
 using Microsoft.AspNetCore.Http;
 using Serilog.Context;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Cafe.Model.Shared.Logging
+namespace Cafe.Infrastructure.Logging
 {
 	public class ShareUserIdToEntirePipelineForLoggingMiddleware
 	{

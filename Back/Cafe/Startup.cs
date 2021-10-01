@@ -11,13 +11,14 @@ using Cafe.Infrastructure.Authorization.DI;
 using Cafe.Infrastructure.CORS.DI;
 using Cafe.Infrastructure.DI;
 using Cafe.Infrastructure.EFCore.DI;
+using Cafe.Infrastructure.EFCoreProfiler.DI;
 using Cafe.Infrastructure.ETagCache.Databases.Contexts.Implementations;
 using Cafe.Infrastructure.ETagCache.DI;
+using Cafe.Infrastructure.Logging;
 using Cafe.Infrastructure.OpenAPI;
 using Cafe.Infrastructure.OpenAPI.OperationFilters;
 using Cafe.Model.DTOs;
 using Cafe.Model.Shared;
-using Cafe.Model.Shared.Logging;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -27,6 +28,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System;
@@ -87,7 +89,6 @@ namespace Cafe
 			{
 				services.AddCafeCORSDevelopment(_appSettings);
 			}
-
 			//services.AddCafeAntiforgery(_appSettings);
 
 			services.Configure<ForwardedHeadersOptions>(options =>
@@ -112,7 +113,7 @@ namespace Cafe
 				app.UseExceptionHandler("/error");
 				//app.UseHttpsRedirection();
 			};
-
+			
 			app.UseDefaultFiles();
 			app.UseSpaStaticFiles();
 

@@ -1,8 +1,8 @@
 ﻿
+using Cafe.Infrastructure;
 using Cafe.Infrastructure.HandlersChain;
 using Cafe.Model.BookedTablesResources.IdsWithMarksIsBookedByClient;
 using Cafe.Model.DTOs;
-using Cafe.Model.Shared;
 using Cafe.Model.Shared.Processing;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

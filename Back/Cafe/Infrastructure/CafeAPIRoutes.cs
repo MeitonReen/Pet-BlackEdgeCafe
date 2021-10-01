@@ -7,7 +7,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Cafe.Model.Shared
+namespace Cafe.Infrastructure
 {
 	public static class CafeAPIRoutes
 	{

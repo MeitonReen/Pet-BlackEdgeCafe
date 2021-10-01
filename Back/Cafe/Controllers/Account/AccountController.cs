@@ -1,7 +1,7 @@
 ﻿using Cafe.Databases.Identity.Contexts.Interfaces;
 using Cafe.Databases.Identity.Model;
+using Cafe.Infrastructure;
 using Cafe.Infrastructure.ApplicationSettings.Root;
-using Cafe.Model.Shared;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

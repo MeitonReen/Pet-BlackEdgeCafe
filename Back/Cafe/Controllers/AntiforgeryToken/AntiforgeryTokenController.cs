@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
-using Cafe.Model.Shared;
+using Cafe.Infrastructure;
 
 namespace Cafe.Controllers.AntiforgeryToken
 {

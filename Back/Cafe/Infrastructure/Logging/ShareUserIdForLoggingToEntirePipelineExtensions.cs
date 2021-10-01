@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace Cafe.Model.Shared.Logging
+namespace Cafe.Infrastructure.Logging
 {
 	public static class ShareUserIdForLoggingToEntirePipelineExtensions
 	{

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Cafe.Infrastructure.Authentication.DI
+namespace Cafe.Infrastructure.Antiforgery.DI
 {
 	public static class AntiforgeryServiceCollectionExtentions
 	{

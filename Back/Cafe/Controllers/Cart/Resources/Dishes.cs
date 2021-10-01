@@ -5,7 +5,6 @@ using Cafe.Infrastructure.HandlersChain;
 using Cafe.Model.CartResources.Dishes;
 using Cafe.Model.CartResources.Dishes.Verificators;
 using Cafe.Model.DTOs;
-using Cafe.Model.Shared;
 using Cafe.Model.Shared.Processing;
 using Cafe.Model.Shared.Returns;
 using Cafe.Model.Shared.Verificators;

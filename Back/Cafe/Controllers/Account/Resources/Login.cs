@@ -2,7 +2,6 @@
 using Cafe.Model.AccountResources.Account;
 using Cafe.Model.AccountResources.Account.Verificators;
 using Cafe.Model.DTOs;
-using Cafe.Model.Shared;
 using Cafe.Model.Shared.Returns;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
