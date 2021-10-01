@@ -88,20 +88,7 @@ namespace Cafe
 				services.AddCafeCORSDevelopment(_appSettings);
 			}
 
-			#region Antiforgery
-			/*services.AddAntiforgery(setup =>
-			{
-				//�� ������ ��������� ������� ����� ���� ����� ��� ���������
-				setup.HeaderName = _appSettings.Constants.AntiforgeryTokenRequestHeaderName;
-				//�� ������ ���� ������� ����� ������ ����� ��� ���������
-				//� ��� �������� ���� ��� ������ ��� GetAndStoreTokens
-				setup.Cookie.Name = _appSettings.Constants.AntiforgeryTokenCookieName;
-				setup.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.None;
-				setup.Cookie.HttpOnly = true;
-				setup.Cookie.Path = "/";
-				setup.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-			});*/
-			#endregion
+			//services.AddCafeAntiforgery(_appSettings);
 
 			services.Configure<ForwardedHeadersOptions>(options =>
 			{
