@@ -8,6 +8,7 @@ using Cafe.Infrastructure;
 using Cafe.Infrastructure.ApplicationSettings.Root;
 using Cafe.Infrastructure.Authentication.DI;
 using Cafe.Infrastructure.Authorization.DI;
+using Cafe.Infrastructure.CORS.DI;
 using Cafe.Infrastructure.DI;
 using Cafe.Infrastructure.EFCore.DI;
 using Cafe.Infrastructure.ETagCache.Databases.Contexts.Implementations;
@@ -89,22 +90,10 @@ namespace Cafe
 
 			services.AddControllersWithViews();
 
-			#region Cors
 			if (_env.IsDevelopment())
 			{
-				services.AddCors(Options =>
-				{
-					Options.AddPolicy(_appSettings.Constants.CorsPolicies.Dev, Builder => Builder
-						.WithOrigins("http://localhost:3000")
-						.AllowCredentials()
-						.WithMethods(HttpMethods.Get, HttpMethods.Post, HttpMethods.Put,
-							HttpMethods.Patch, HttpMethods.Options, HttpMethods.Delete)
-						.WithHeaders(_appSettings.Constants.AntiforgeryTokenRequestHeaderName)
-						.WithExposedHeaders(_appSettings.Constants
-							.AntiforgeryTokenResponseHeaderName));
-				});
+				services.AddCafeCORSDevelopment(_appSettings);
 			}
-			#endregion
 
 			#region Antiforgery
 			/*services.AddAntiforgery(setup =>
