@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace Cafe.Model.Shared.AuthorizationPolicies.Default.CustomRequirements
+namespace Cafe.Infrastructure.Authorization.Policies.Default.Requirements
 {
 	public class UserIsExists : IAuthorizationRequirement
 	{

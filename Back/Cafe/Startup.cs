@@ -6,17 +6,16 @@ using Cafe.Databases.Identity.DI;
 using Cafe.Databases.Identity.Model;
 using Cafe.Infrastructure;
 using Cafe.Infrastructure.ApplicationSettings.Root;
-using Cafe.Infrastructure.Authentication;
+using Cafe.Infrastructure.Authentication.DI;
+using Cafe.Infrastructure.Authorization.DI;
 using Cafe.Infrastructure.DI;
-using Cafe.Infrastructure.EFCore;
+using Cafe.Infrastructure.EFCore.DI;
 using Cafe.Infrastructure.ETagCache.Databases.Contexts.Implementations;
 using Cafe.Infrastructure.ETagCache.DI;
 using Cafe.Infrastructure.OpenAPI;
 using Cafe.Infrastructure.OpenAPI.OperationFilters;
 using Cafe.Model.DTOs;
 using Cafe.Model.Shared;
-using Cafe.Model.Shared.AuthorizationPolicies.Default.CustomHandlers;
-using Cafe.Model.Shared.AuthorizationPolicies.Default.CustomRequirements;
 using Cafe.Model.Shared.Logging;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -74,15 +73,7 @@ namespace Cafe
 			#region Authentification & Authorization
 			services.AddCafeCookieAuthentication(_appSettings);
 
-			services.AddAuthorization(conf =>
-				conf.DefaultPolicy = new AuthorizationPolicyBuilder(CookieAuthenticationDefaults
-					.AuthenticationScheme)
-						.RequireClaim(_appSettings.Constants.UserId)
-						.RequireClaim(_appSettings.Constants.UserName)
-						.AddRequirements(new UserIsExists())
-						.Build()
-			);
-			services.AddScoped<IAuthorizationHandler, UserIsExistsHandler>();//Use EFCore -> Scoped
+			services.AddCafeAuthorizationDefault(_appSettings);
 			#endregion
 
 			services.AddControllers();

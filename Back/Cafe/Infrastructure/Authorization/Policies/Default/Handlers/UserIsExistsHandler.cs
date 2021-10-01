@@ -1,12 +1,13 @@
 ﻿using Cafe.Databases.Identity.Model;
 using Cafe.Infrastructure.ApplicationSettings.Root;
-using Cafe.Model.Shared.AuthorizationPolicies.Default.CustomRequirements;
+using Cafe.Infrastructure.Authorization.Policies.Default.Requirements;
+using Cafe.Model.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Threading.Tasks;
 
-namespace Cafe.Model.Shared.AuthorizationPolicies.Default.CustomHandlers
+namespace Cafe.Infrastructure.Authorization.Policies.Default.Handlers
 {
 	public class UserIsExistsHandler : AuthorizationHandler<UserIsExists>
 	{
