@@ -76,12 +76,10 @@ namespace Cafe
 
 			services.AddSwaggerGenForCafeAPIv1(_appSettings);
 
-			#region EFCoreProfiler
-			services.AddMemoryCache();
-			services
-				.AddMiniProfiler(options => options.RouteBasePath = "/profiler")
-				.AddEntityFramework();
-			#endregion
+			if (_env.IsDevelopment())
+			{
+				services.AddCafeEFCoreMiniProfiler(_appSettings);
+			}
 
 			services.AddControllersWithViews();
 
