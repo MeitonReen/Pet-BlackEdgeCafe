@@ -7,7 +7,6 @@ namespace Cafe.Controllers.Tables
 {
 	[ApiController]
 	[Route(CafeAPIRoutes.V1.This)]
-	
 	[Produces("application/json")]
 	public partial class TablesController : ControllerBase
 	{

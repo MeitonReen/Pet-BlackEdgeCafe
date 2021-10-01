@@ -70,7 +70,6 @@ namespace Cafe.Controllers.BookedTables
 		[Consumes(MimeTypes.Application.XWWWFormUrlencoded)]
 		[ProducesResponseType(typeof(ErrorDTO), StatusCodes.Status400BadRequest)]
 		[ProducesResponseType(typeof(EmptyResult), StatusCodes.Status200OK)]
-
 		public async Task<IActionResult> UnbookATable([FromRoute][Required] Guid tableId)
 		{
 			return await new HandlersChain()

@@ -2,13 +2,15 @@ using Cafe.Databases.Cafe.Context.Implementations;
 using Cafe.Databases.Cafe.Context.Interfaces;
 using Cafe.Databases.Identity.Contexts.Implementations;
 using Cafe.Databases.Identity.Contexts.Interfaces;
+using Cafe.Databases.Identity.DI;
 using Cafe.Databases.Identity.Model;
 using Cafe.Infrastructure;
 using Cafe.Infrastructure.ApplicationSettings.Root;
-using Cafe.Infrastructure.DIServices;
+using Cafe.Infrastructure.DI;
 using Cafe.Infrastructure.ETagCache.Databases.Contexts.Implementations;
-using Cafe.Infrastructure.ETagCache.DIServices;
-using Cafe.Infrastructure.OpenApiFilters;
+using Cafe.Infrastructure.ETagCache.DI;
+using Cafe.Infrastructure.OpenAPI;
+using Cafe.Infrastructure.OpenAPI.OperationFilters;
 using Cafe.Model.DTOs;
 using Cafe.Model.Shared;
 using Cafe.Model.Shared.AuthorizationPolicies.Default.CustomHandlers;
@@ -36,7 +38,6 @@ namespace Cafe
 	{
 		private readonly AppSettings _appSettings = new();
 		private readonly IWebHostEnvironment _env = null;
-
 		public Startup(IConfiguration appSettingsConf, IWebHostEnvironment env)
 		{
 			_appSettings = appSettingsConf.Get<AppSettings>();

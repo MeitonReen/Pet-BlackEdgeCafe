@@ -1,12 +1,9 @@
 ﻿using Cafe.Infrastructure.ApplicationSettings.Root;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Management.Automation;
 using System.Threading.Tasks;
 
-namespace Cafe.Infrastructure.DIServices
+namespace Cafe.Infrastructure.OpenAPI
 {
 	public class OpenAPIGenerator
 	{

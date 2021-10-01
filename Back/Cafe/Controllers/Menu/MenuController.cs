@@ -9,7 +9,6 @@ namespace Cafe.Controllers.Menu
 {
 	[ApiController]
 	[Route(CafeAPIRoutes.V1.This)]
-	
 	[Authorize]
 	[Produces("application/json")]
 	public partial class MenuController : ControllerBase

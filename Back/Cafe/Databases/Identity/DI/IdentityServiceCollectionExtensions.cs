@@ -1,12 +1,12 @@
-﻿
+﻿using Cafe.Infrastructure.DI;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Cafe.Infrastructure.DIServices
+namespace Cafe.Databases.Identity.DI
 {
-	public static class IdentityServicesExtensions
+	public static class IdentityServiceCollectionExtensions
 	{
 		public static void AddIdentityEFCoreScopedAsT<TUser, TDatabaseContext, ScopedAsT>(
 			this IServiceCollection services, Action<IdentityOptions> options)

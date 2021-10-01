@@ -1,5 +1,4 @@
-﻿
-using Cafe.Infrastructure.ApplicationSettings.Root;
+﻿using Cafe.Infrastructure.ApplicationSettings.Root;
 using Cafe.Infrastructure.ETagCache.Attributes;
 using Cafe.Infrastructure.ETagCache.Shared;
 using Microsoft.AspNetCore.Http;
@@ -11,10 +10,8 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
-using System.Net.Mime;
 
-namespace Cafe.Infrastructure.OpenApiFilters
+namespace Cafe.Infrastructure.OpenAPI.OperationFilters
 {
 	public class OpenAPIETagCache : IOperationFilter
 	{

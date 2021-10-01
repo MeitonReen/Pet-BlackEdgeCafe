@@ -10,7 +10,6 @@ namespace Cafe.Controllers.AntiforgeryToken
 	[ApiController]
 	[Route(CafeAPIRoutes.V1.This)]
 	[Authorize]
-	
 	public partial class AntiforgeryTokenController : ControllerBase
 	{
 		private readonly AppSettings _appSettings = null;

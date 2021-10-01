@@ -1,11 +1,11 @@
-﻿using Cafe.Infrastructure.DIServices;
+﻿using Cafe.Infrastructure.DI;
 using Cafe.Infrastructure.ETagCache.Databases.Contexts.Interfaces;
 using Cafe.Infrastructure.ETagCache.Shared;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Cafe.Infrastructure.ETagCache.DIServices
+namespace Cafe.Infrastructure.ETagCache.DI
 {
-	public static class ETagCacheServicesExtensions
+	public static class ETagCacheServiceCollectionExtensions
 	{
 		public static void AddETagCache<TDatabaseContext>(this IServiceCollection services)
 			where TDatabaseContext : ETagCacheDatabase

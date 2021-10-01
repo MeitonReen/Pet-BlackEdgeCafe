@@ -4,7 +4,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Cafe.Infrastructure.OpenApiFilters
+namespace Cafe.Infrastructure.OpenAPI.OperationFilters
 {
 	public class OpenAPIOperationsSecurityFilter : IOperationFilter
 	{

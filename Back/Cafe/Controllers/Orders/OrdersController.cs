@@ -9,7 +9,6 @@ namespace Cafe.Controllers.Orders
 {
 	[ApiController]
 	[Route(CafeAPIRoutes.V1.This)]
-	
 	[Authorize]
 	//[ValidateAntiForgeryToken]
 	[Produces("application/json")]

@@ -17,7 +17,6 @@ namespace Cafe.Controllers.Account
 		private readonly UserManager<User> _userManager = null;
 		private readonly IdentityDatabase _usersDB = null;
 		private readonly AppSettings _appSettings = null;
-
 		public AccountController(IPasswordHasher<User> passwordHasher, UserManager<User> userManager,
 			IdentityDatabase usersDB, AppSettings appSettings)
 		{

@@ -5,9 +5,8 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 
-namespace Cafe.Infrastructure.OpenApiFilters
+namespace Cafe.Infrastructure.OpenAPI.OperationFilters
 {
 	public class OpenAPIUnauthorized : IOperationFilter
 	{
