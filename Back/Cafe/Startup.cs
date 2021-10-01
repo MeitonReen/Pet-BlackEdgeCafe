@@ -89,14 +89,10 @@ namespace Cafe
 			{
 				services.AddCafeCORSDevelopment(_appSettings);
 			}
+
 			//services.AddCafeAntiforgery(_appSettings);
 
-			services.Configure<ForwardedHeadersOptions>(options =>
-			{
-				options.ForwardedHeaders =
-					ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
-				options.KnownProxies.Add(IPAddress.Parse("172.17.0.3"));
-			});
+			services.ConfigureForwardedHeaders();
 		}
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
