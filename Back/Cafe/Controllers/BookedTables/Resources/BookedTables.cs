@@ -5,7 +5,6 @@ using Cafe.Infrastructure.HandlersChain;
 using Cafe.Model.BookedTablesResources.BookedTables;
 using Cafe.Model.BookedTablesResources.BookedTables.Verificators;
 using Cafe.Model.DTOs;
-using Cafe.Model.Shared;
 using Cafe.Model.Shared.Processing;
 using Cafe.Model.Shared.Returns;
 using Microsoft.AspNetCore.Http;
@@ -70,7 +69,6 @@ namespace Cafe.Controllers.BookedTables
 		[Consumes(MimeTypes.Application.XWWWFormUrlencoded)]
 		[ProducesResponseType(typeof(ErrorDTO), StatusCodes.Status400BadRequest)]
 		[ProducesResponseType(typeof(EmptyResult), StatusCodes.Status200OK)]
-
 		public async Task<IActionResult> UnbookATable([FromRoute][Required] Guid tableId)
 		{
 			return await new HandlersChain()

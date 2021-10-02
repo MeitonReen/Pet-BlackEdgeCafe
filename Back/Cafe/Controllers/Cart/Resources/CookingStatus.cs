@@ -4,7 +4,6 @@ using Cafe.Infrastructure.ETagCache.Attributes;
 using Cafe.Infrastructure.HandlersChain;
 using Cafe.Model.CartResources.CookingStatus;
 using Cafe.Model.DTOs;
-using Cafe.Model.Shared;
 using Cafe.Model.Shared.Processing;
 using Cafe.Model.Shared.Returns;
 using Cafe.Model.Shared.Verificators;

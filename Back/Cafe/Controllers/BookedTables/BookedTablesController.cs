@@ -1,6 +1,6 @@
 ﻿using Cafe.Databases.Cafe.Context.Interfaces;
+using Cafe.Infrastructure;
 using Cafe.Infrastructure.ApplicationSettings.Root;
-using Cafe.Model.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,6 @@ namespace Cafe.Controllers.BookedTables
 {
 	[ApiController]
 	[Route(CafeAPIRoutes.V1.This)]
-	
 	[Authorize]
 	//[ValidateAntiForgeryToken]
 	[Produces("application/json")]

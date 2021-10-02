@@ -6,6 +6,7 @@
 		public string UserId { get; init; }
 		public string UserName { get; init; }
 		public string AuthCookieName { get; init; }
+		public string EFCoreMiniProfilerBasePath { get; init; }
 		public string GetOpenAPIUrl { get; init; }
 		public string ServerUrlOpenAPI { get; init; }
 		public string AntiforgeryTokenResponseHeaderName { get; init; }

@@ -1,9 +1,9 @@
 ﻿
+using Cafe.Infrastructure;
 using Cafe.Infrastructure.ETagCache.Attributes;
 using Cafe.Infrastructure.HandlersChain;
 using Cafe.Model.CartResources.Cart;
 using Cafe.Model.DTOs;
-using Cafe.Model.Shared;
 using Cafe.Model.Shared.Processing;
 using Cafe.Model.Shared.Returns;
 using Cafe.Model.Shared.Verificators;
