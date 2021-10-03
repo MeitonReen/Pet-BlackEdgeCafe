@@ -1,62 +1,63 @@
 .dish-details {
   display: grid;
-  grid-template-rows: auto, 1fr auto;
-  grid-template-areas:
-    "dish-title"
-    "dish-image"
-    "dish-description";
+  grid-template-rows: min-content, minmax(0, 1fr) min-content;
+  grid-template-areas: "dish-title" "dish-image" "dish-description";
   font-family: Chalk-cyrillic;
-  font-size: 1.5rem;
+  font-size: 2vw;
   height: 100vh;
   padding: 0 10rem;
 }
+
 .dish-details__text {
   margin: 0;
   white-space: pre;
 }
+
 .dish-details__title {
   grid-area: dish-title;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3vw;
   margin: 1rem 0;
 }
+
 .dish-details__image {
   grid-area: dish-image;
   justify-self: center;
   display: block;
   margin: 0 0 0.2rem 0;
   object-fit: contain;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .dish-details__description {
-  grid-area:
-  dish-description;
+  grid-area: dish-description;
   display: grid;
   column-gap: 2rem;
   grid-template-rows: auto auto auto;
   grid-template-columns: auto auto auto;
   grid-template-areas:
-    "weight calorie cost"  
+    "weight calorie cost"
     "description description description"
-    "catogories catogories catogories";  
+    "catogories catogories catogories";
   margin: 1rem 0;
-  
 }
+
 .dish-details__dish-weight {
   grid-area: weight;
   text-align: right;
 }
+
 .dish-details__dish-calorie {
   grid-area: calorie;
   text-align: center;
 }
+
 .dish-details__dish-cost {
   grid-area: cost;
   text-align: left;
 }
+
 .dish-details__dish-description {
   grid-area: description;
   white-space: normal;

@@ -6,39 +6,42 @@
 .cart-page__body {
   margin: 1rem 0 0 0;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-areas:"main aside";
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-areas: "main aside";
 }
 
 .cart-page__main {
   grid-area: main;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "order booked-tables";
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "order booked-tables";
   justify-items: center;
 }
+
 .cart-page__order {
   grid-area: order;
 }
+
 .cart-page__booked-tables {
   grid-area: booked-tables;
 }
+
 .cart-page__order-title {
   margin: 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.7vw;
   white-space: nowrap;
 }
+
 .cart-page__dishes-list {
-  margin: 1rem auto 0 auto;
   display: grid;
   row-gap: 1rem;
-  width: min-content;
 }
+
 .cart-page__dishes-list-item {
   justify-self: stretch;
 }
+
 .cart-page__list-item-through-line {
   text-decoration: line-through;
 }
@@ -46,21 +49,25 @@
 .cart-page__aside {
   grid-area: aside;
   margin: 0 0.2rem 0 0;
+  font-size: 1.4vw;
 }
 
 .cart-page__promocode {
   display: grid;
-  grid-template-columns:
-    1fr auto;
-  grid-template-areas:
-    "promocode-input promocode-check-button";
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "promocode-input promocode-check-button";
+  font-family: inherit;
+  font-size: inherit;
 }
+
 .cart-page__promocode_accepted {
   color: rgb(90, 202, 131);
 }
+
 .cart-page__promocode_denied {
   color: rgb(187, 84, 84);
 }
+
 .cart-page__promocode-input {
   grid-area: promocode-input;
   margin: 0 0.2rem 0 0;
@@ -77,12 +84,16 @@
 .cart-page__total {
   text-align: left;
   white-space: pre-wrap;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .cart-page__cooking-status {
   white-space: nowrap;
   width: min-content;
   margin: 1rem auto 0 0;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .cart-page__put-order {
@@ -91,10 +102,3 @@
   font-family: inherit;
   font-size: inherit;
 }
-
-
-
-
-
-
-

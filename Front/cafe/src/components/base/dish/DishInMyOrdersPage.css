@@ -5,6 +5,7 @@
   grid-template-areas:
     "quantity dish-details-button";
   column-gap: 0.5rem;
+  font-size: 1.4vw;
 }
 
 .dish-in-my-order-page__quantity {

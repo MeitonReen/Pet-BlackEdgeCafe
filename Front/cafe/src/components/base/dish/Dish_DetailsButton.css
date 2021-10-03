@@ -2,10 +2,10 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) min-content;
   grid-template-areas:
     "dish details-button";
-  column-gap: 0.3rem;
+  column-gap: 0.2vw;
 }
 
 .dish-details-button__dish {
@@ -13,10 +13,11 @@
 }
 .dish-details-button__details-button {
   grid-area: details-button;
+  display: block;
 }
 .dish-details-button__details-button-icon {
-  height: 1rem;
-  width: 1rem;
+  height: 1vw;
+  width: 1vw;
   background-image: url(../../../images/icons/dish-details.svg);
   background-size: contain;
 }
