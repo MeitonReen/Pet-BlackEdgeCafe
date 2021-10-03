@@ -14,7 +14,7 @@ indicatorsKeys.forEach(key => key = nanoid(1));
 export default function ImagesGallery(props) {
   //#region State
   const [indexShowedImage, setIndexShowedImage] = useState(-1);
-  const indicatorsShowedImage = updateIndicators(indicator,
+  const indicatorsShowedImage = refreshIndicators(indicator,
     activeIndicator, imagesUrls.length, indexShowedImage);
   //#endregion
   //#region Effects
@@ -60,7 +60,7 @@ export default function ImagesGallery(props) {
 function cloneREWithKey(indicator, keY) {
   return React.cloneElement(indicator, { key: keY })
 }
-function updateIndicators(indicator, activeIndicator, numberImages,
+function refreshIndicators(indicator, activeIndicator, numberImages,
   indexShowedImage) {
   let outputIndicators = [];
 

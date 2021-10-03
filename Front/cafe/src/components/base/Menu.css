@@ -1,12 +1,12 @@
 .menu-dishes {
   position: relative;
-  width: 100%;
   height: 100%;
 }
 
 .menu-dishes__shadow-over-menu-background {
   box-shadow: 0 0 4px 4px black inset;
   z-index: 4;
+  
 }
 
 .menu-dishes__menu-background {
@@ -14,15 +14,14 @@
   position: relative;
   object-fit: cover;
   width: 100%;
-  height: 100%;
-  overflow: auto;
+  max-height: 100%;
+ 
   z-index: 1;
 }
 
 .menu-dishes__background-decor {
   position: absolute;
   box-sizing: border-box;
-  padding: 1rem 0 0 0;
   left: 0;
   top: 0;
   z-index: 2;
@@ -38,11 +37,16 @@
   top: 0;
   z-index: 5;
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "nav-left menu-title nav-right" "nav-left menu nav-right";
+  grid-template-columns: min-content minmax(0, 1fr) min-content;
+  grid-template-rows: min-content minmax(0, 1fr);
+  grid-template-areas:
+    "nav-left menu-title nav-right"
+    "nav-left menu nav-right";
+  font-size: 1.2vw;
   width: 100%;
   height: 100%;
+  min-width: 0;
+  min-height: 0;
 }
 
 .menu-dishes__nav-container {
@@ -61,10 +65,11 @@
 
 .menu-dishes__nav {
   align-self: center;
-  width: 1.5rem;
+  width: 1.9vw;
   background-size: contain;
   background-repeat: no-repeat;
-  margin: 0 0.3rem;
+  margin: 0 1rem;
+  
 }
 
 .menu-dishes__nav-left {
@@ -95,7 +100,7 @@
 
 .menu-dishes__menu-title {
   grid-area: menu-title;
-  font-size: 2rem;
+  font-size: 2.3vw;
   margin: 0;
   text-align: center;
 }
@@ -103,39 +108,41 @@
 .menu-dishes__menu-categories {
   grid-area: menu;
   position: relative;
+  
 }
 
 .menu-dishes__dishes-category {
   position: absolute;
+  
 }
 
 .menu-dishes__dishes-category_soups {
-  left: 12vw;
+  left: 7vw;
   top: 3vh;
 }
 
 .menu-dishes__dishes-category_salads {
-  left: 28vw;
+  left: 24vw;
   top: 3vh;
 }
 
 .menu-dishes__dishes-category_snacks {
-  left: 46vw;
+  left: 42vw;
   top: 3vh;
 }
 
 .menu-dishes__dishes-category_roast {
-  left: 64vw;
+  left: 60vw;
   top: 3vh;
 }
 
 .menu-dishes__dishes-category_alco-long-drinks {
-  right: 10vw;
+  right: 5vw;
   top: 3vh;
 }
 
 .menu-dishes__dishes-category_alco-shot-drinks {
-  left: 13vw;
+  left: 3vw;
   top: 3vh;
 }
 
@@ -146,14 +153,14 @@
 .menu-dishes__dishes-category-title {
   margin: 0;
   text-align: center;
-  font-size: 1.5rem;
-  padding: 0 2em 0 0;
+  font-size: 1.8vw;
+  padding: 0 0 0 0;
 }
 
 .menu-dishes__dishes {
-  font-size: 1rem;
   display: grid;
   grid-auto-flow: row;
+  
 }
 .menu-dishes__dish {
   margin: 0.5rem;
@@ -172,24 +179,23 @@
 
 .menu-dishes__dishes-alco-shot-drinks {
   grid-template-columns: repeat(3, auto);
-  width: 40vw;
+  width: 50vw;
   height: 60vh;
 }
 
 .menu-dishes__dishes-alco-long-drinks {
   grid-template-columns: repeat(2, auto);
-  width: 30vw;
+  width: 35vw;
   height: 60vh;
 }
 
 .menu-dishes__dishes-non-alco-drinks {}
 
-
-
 .menu-dishes__background-decor-item {
   position: absolute;
   object-fit: contain;
   filter: drop-shadow(-10px 10px 5px black);
+  
 }
 
 .menu-dishes__background-decor-ch1 {

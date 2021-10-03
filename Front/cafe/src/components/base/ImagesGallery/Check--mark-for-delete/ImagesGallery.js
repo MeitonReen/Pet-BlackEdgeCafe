@@ -24,7 +24,7 @@
       if (currentIndex > 0) {
         currentIndex -= 1;
         currentImage.attr("src", images[currentIndex]);
-        updateIndicators(indicatorsArea, currentIndex, images.length, indicator, activeIndicator);
+        refreshIndicators(indicatorsArea, currentIndex, images.length, indicator, activeIndicator);
       }
     }
   
@@ -32,7 +32,7 @@
       if (currentIndex < images.length - 1) {
         currentIndex += 1;
         currentImage.attr("src", images[currentIndex]);
-        updateIndicators(indicatorsArea, currentIndex, images.length, indicator, activeIndicator);
+        refreshIndicators(indicatorsArea, currentIndex, images.length, indicator, activeIndicator);
       }
     }
   
@@ -45,9 +45,9 @@
     })
   
     currentImage.attr("src", images[currentIndex]);
-    updateIndicators(indicatorsArea, currentIndex, images.length, indicator, activeIndicator);
+    refreshIndicators(indicatorsArea, currentIndex, images.length, indicator, activeIndicator);
   
-    function updateIndicators(indicatorsArea, currentIndex, length, indicator, activeIndicator) {
+    function refreshIndicators(indicatorsArea, currentIndex, length, indicator, activeIndicator) {
       indicatorsArea.empty();
       let outputIndicators = [];
   

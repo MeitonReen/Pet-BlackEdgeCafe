@@ -43,7 +43,7 @@ export default function Menu(props) {
   //#endregion
   //#region Effects
   useEffect(() => {
-    updateDishIdsByCategories();
+    refreshDishIdsByCategories();
   }, []);
   //#endregion
   //#region Prepare JSX
@@ -117,7 +117,7 @@ export default function Menu(props) {
       setSelectedMenuPageIndex(selectedMenuPageIndex - 1);
     }
   }
-  function updateDishIdsByCategories() {
+  function refreshDishIdsByCategories() {
     new CafeAPI().menu.getDishIdsByCategories((error, data, response) =>
       new StatusCodeService()
         .if([200], response, () => setDishIdsByCategories(prevState =>

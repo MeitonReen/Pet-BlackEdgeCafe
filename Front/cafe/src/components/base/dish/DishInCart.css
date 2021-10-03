@@ -4,7 +4,8 @@
     auto 1fr;
   grid-template-areas:
     "operations dish-details-button";
-  column-gap: 0.5rem;
+  column-gap: 0.5vw;
+  font-size: 1.4vw;
 }
 
 .dish-in-cart__operations {

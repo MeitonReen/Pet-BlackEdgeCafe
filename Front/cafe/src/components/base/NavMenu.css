@@ -5,7 +5,7 @@
   
   display: flex;
   flex-flow: row nowrap;
-  font-size: 1.2rem;
+  font-size: 1.4vw;
   font-family: Chalk-cyrillic;
   justify-content: center;
   column-gap: 1.7rem;

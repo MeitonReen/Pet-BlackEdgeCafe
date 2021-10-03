@@ -3,8 +3,8 @@
   height: 100%;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: minmax(0, 1fr) min-content;
+  grid-template-rows: min-content min-content min-content;
   grid-template-areas:
     'name weight'
     'name cost'
@@ -12,8 +12,7 @@
 }
 
 .dish__item {
-  margin-block: 0; /*unset default*/
-  margin-block: 0; /*unset default*/
+  margin: 0; /*unset default*/
 }
 
 .dish__item_name {

@@ -1,9 +1,8 @@
 .table-for-list-item {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-areas:
-        "table-number"
-        "number-of-seats";
+    grid-template-areas: "table-number" "number-of-seats";
+    font-size: 1.4vw;
 }
 
 .table-for-list-item__text {
