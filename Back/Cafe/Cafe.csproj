@@ -11,6 +11,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="swagger.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.10" />
 		<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.10" />
@@ -43,28 +47,19 @@
 		<Content Include="Infrastructure\ETagCache\Databases\Data\Sqlite\ETagCacheDB.db">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
-
-		<None Include="swagger.json">
-			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
 
 	<ItemGroup>
 		<Folder Include="wwwroot\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include="swagger.json" />
+	</ItemGroup>
+
 	<ProjectExtensions>
 		<VisualStudio>
-			<UserProperties
-				appsettings_1json__JsonSchema="https://json.schemastore.org/appsettings.json"
-				appsettings_1Development_1json__JsonSchema="https://json.schemastore.org/appsettings.json"
-				appsettings_1Production_1json__JsonSchema="https://json.schemastore.org/appsettings.json"
-				secrets_1json__JsonSchema="https://json.schemastore.org/appsettings.json"
-				
-				properties_4launchsettings_1json__JsonSchema="https://json.schemastore.org/launchsettings.json"
-				
-				swagger_1json__JsonSchema="https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"
-			/>
+			<UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/appsettings.json" appsettings_1Development_1json__JsonSchema="https://json.schemastore.org/appsettings.json" appsettings_1Production_1json__JsonSchema="https://json.schemastore.org/appsettings.json" secrets_1json__JsonSchema="https://json.schemastore.org/appsettings.json" properties_4launchsettings_1json__JsonSchema="https://json.schemastore.org/launchsettings.json" swagger_1json__JsonSchema="https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json" />
 		</VisualStudio>
 	</ProjectExtensions>
 	<!--<ProjectExtensions>
