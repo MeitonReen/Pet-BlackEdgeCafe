@@ -74,5 +74,5 @@ export default function Login(props) {
 }
 //#region Other, not using state
 const accessDenied = (
-  <div className="login__access-denied">Неверный логин или пароль</div>);
+  <p className="login__text login__access-denied">Неверный логин или пароль</p>);
 //#endregion

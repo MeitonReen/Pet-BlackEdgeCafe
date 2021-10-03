@@ -10,6 +10,7 @@
 
 .dish-in-cart__operations {
   grid-area: operations;
+  width: 2.5vw;
 }
 
 .dish-in-cart__dish-details-button {

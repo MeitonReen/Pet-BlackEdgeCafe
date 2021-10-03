@@ -18,9 +18,9 @@ export default function OperationsOnDishInCart(props) {
     onClick={() => props.operations.deleteAllById(
       props.dish.dishId)} />);
   const countDishes = (
-    <div className="operations-on-dish-in-cart__count-dishes">
+    <p className="operations-on-dish-in-cart__count-dishes">
       x{props.quantityOfThisDishInCart}
-    </div>);
+    </p>);
   //#endregion
   return (
     props.quantityOfThisDishInCart > 0) ?

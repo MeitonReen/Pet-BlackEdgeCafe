@@ -2,10 +2,6 @@
 .operations-on-dish-in-cart {
   display: grid;
   grid-template-rows: min-content min-content min-content;
-  grid-template-areas:
-    "operation-add"
-    "operation-delete"
-    "operation-delete-all";
   align-self: start;
   row-gap: 0.4vw;
 }
@@ -16,6 +12,7 @@
   height: 1.3vw;
   background-size: contain;
   align-self: center;
+  justify-self: center;
   background-repeat: no-repeat;
 }
 
@@ -44,6 +41,7 @@
 }
 
 .operations-on-dish-in-cart__count-dishes {
+  margin: 0;
   text-align: center;
 }
 /*

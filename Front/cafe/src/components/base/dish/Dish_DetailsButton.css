@@ -2,6 +2,8 @@
   width: 100%;
   height: 100%;
   display: grid;
+  box-sizing: border-box;
+  padding: 0.2vw 0 0 0;
   grid-template-columns: minmax(0, 1fr) min-content;
   grid-template-areas:
     "dish details-button";
@@ -20,6 +22,7 @@
   width: 1vw;
   background-image: url(../../../images/icons/dish-details.svg);
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .dish-details-button__details-button-icon:hover {

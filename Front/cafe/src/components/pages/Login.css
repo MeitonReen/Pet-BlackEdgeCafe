@@ -26,5 +26,6 @@
   margin-top: 1rem;
 }
 .login__access-denied {
+  text-align: center;
   color: rgb(187, 84, 84);
 }
