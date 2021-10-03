@@ -1,22 +1,28 @@
 .dish-in-order-page {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr), min-content;
   grid-template-areas:
-    "dish-image operations"
-    "dish-details-button dish-details-button";
+    "dish-image-with-operations"
+    "dish-details-button";
   width: 14vw;
   height: 14vw;
   row-gap: 0.5vw;
-  column-gap: 0;
+}
+
+.dish-in-order-page__dish-image-with-operations {
+  grid-area: dish-image-with-operations;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 0.5vw;
+  min-width: 0;
+  min-height: 0;
 }
 
 .dish-in-order-page__dish-image {
   grid-area: dish-image;
   display: block;
-  justify-self: center;
   box-sizing: border-box;
-  padding: 0 0 0.2rem 0;
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
@@ -28,6 +34,7 @@
 }
 
 .dish-in-order-page__operations {
+  width: 2.5vw;
   grid-area: operations;
 }
 

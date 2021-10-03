@@ -11,6 +11,7 @@
   white-space: nowrap;
   text-align: justify;
   font-size: 1.7vw;
+  width: 30vw;
 }
 .list__items {
   margin: 1rem 0 0 0;
