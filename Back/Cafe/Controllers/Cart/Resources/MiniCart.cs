@@ -30,7 +30,7 @@ namespace Cafe.Controllers.Cart
 			return await new HandlersChain()
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
 				.AddChainLink(() => new IfClientCartIsExists(_cafeDB))
-				.AddChainLink(() => new ReturnMiniCartState(_cafeDB))
+				.AddChainLink(() => new ReturnMiniCartStateV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 	}

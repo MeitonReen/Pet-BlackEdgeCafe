@@ -28,7 +28,7 @@ namespace Cafe.Controllers.BookedTables
 		{
 			return await new HandlersChain()
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
-				.AddChainLink(() => new ReturnBookedTablesByClient(_cafeDB))
+				.AddChainLink(() => new ReturnBookedTablesByClientV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 		/// <summary>Book a table</summary>
@@ -74,7 +74,7 @@ namespace Cafe.Controllers.BookedTables
 			return await new HandlersChain()
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
 				.AddChainLink(() => new IfUnbookingTableIsFound(_cafeDB, tableId))
-				.AddChainLink(() => new IfUnbookingTableIsNotBusyWithOrders(_cafeDB))
+				.AddChainLink(() => new IfUnbookingTableIsNotBusyWithOrdersV2Latest(_cafeDB))
 				.AddChainLink(() => new UnbookATable(_cafeDB))
 				.AddChainLink(() => new ReturnEmptyOkResult())
 				.RunChainAsync();

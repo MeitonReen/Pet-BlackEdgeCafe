@@ -24,7 +24,7 @@ namespace Cafe.Controllers.Menu
 		public async Task<IActionResult> GetMenu()
 		{
 			return await new HandlersChain()
-				.AddChainLink(() => new ReturnMenu(_cafeDB))
+				.AddChainLink(() => new ReturnMenuV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 	}

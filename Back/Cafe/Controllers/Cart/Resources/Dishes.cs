@@ -40,7 +40,7 @@ namespace Cafe.Controllers.Cart
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
 				.AddChainLink(() => new IfClientCartIsExists(_cafeDB))
 				.AddChainLink(() => new IfAddingDishIsExists(_cafeDB, dishId))
-				.AddChainLink(() => new ApplySummedAppliedValidPromocodesOnDish(_cafeDB, dishId))
+				.AddChainLink(() => new ApplySummedAppliedValidPromocodesOnDishV2Latest(_cafeDB, dishId))
 				.AddChainLink(() => new AddDish(_cafeDB, dishId))
 				.AddChainLink(() => new ReturnEmptyOkResult())
 				.RunChainAsync();
@@ -66,8 +66,8 @@ namespace Cafe.Controllers.Cart
 			return await new HandlersChain()
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
 				.AddChainLink(() => new IfClientCartIsExists(_cafeDB))
-				.AddChainLink(() => new IfDeletingDishesByDishIdIsExists(_cafeDB, dishId))
-				.AddChainLink(() => new ApplySummedAppliedValidPromocodesOnDish(_cafeDB, dishId))
+				.AddChainLink(() => new IfDeletingDishesByDishIdIsExistsV2Latest(_cafeDB, dishId))
+				.AddChainLink(() => new ApplySummedAppliedValidPromocodesOnDishV2Latest(_cafeDB, dishId))
 				.AddChainLink(() => new DeleteDishesByDishId(_cafeDB, dishId))
 				.AddChainLink(() => new ReturnEmptyOkResult())
 				.RunChainAsync();

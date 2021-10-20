@@ -32,7 +32,7 @@ namespace Cafe.Controllers.Menu
 		{
 			return await new HandlersChain()
 				.AddChainLink(() => new IfThisDishIsExists(_cafeDB, dishId))
-				.AddChainLink(() => new ReturnDishDetails(_cafeDB))
+				.AddChainLink(() => new ReturnDishDetailsV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 	}

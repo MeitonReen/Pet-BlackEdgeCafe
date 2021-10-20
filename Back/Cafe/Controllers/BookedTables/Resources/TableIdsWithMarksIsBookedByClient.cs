@@ -22,7 +22,7 @@ namespace Cafe.Controllers.BookedTables
 		{
 			return await new HandlersChain()
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
-				.AddChainLink(() => new ReturnBookedTablesIdsWithMarksIsBookedByClient(_cafeDB))
+				.AddChainLink(() => new ReturnBookedTablesIdsWithMarksIsBookedByClientV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 	}
