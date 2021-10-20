@@ -22,7 +22,7 @@ namespace Cafe.Controllers.Tables
 		public async Task<IActionResult> GetTables()
 		{
 			return await new HandlersChain()
-				.AddChainLink(() => new ReturnTables(_cafeDB))
+				.AddChainLink(() => new ReturnTablesV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 	}

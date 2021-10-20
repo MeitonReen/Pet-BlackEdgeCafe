@@ -25,7 +25,7 @@ namespace Cafe.Controllers.Menu
 		public async Task<IActionResult> GetDishIdsByCategories()
 		{
 			return await new HandlersChain()
-				.AddChainLink(() => new ReturnDishIdsByCategories(_cafeDB))
+				.AddChainLink(() => new ReturnDishIdsByCategoriesV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 	}

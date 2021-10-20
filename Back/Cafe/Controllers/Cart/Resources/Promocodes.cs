@@ -41,7 +41,7 @@ namespace Cafe.Controllers.Cart
 				.AddChainLink(() => new IfClientCartIsExists(_cafeDB))
 				.AddChainLink(() => new IfAddingPromocodeIsCorrect(_cafeDB, promocode))
 				.AddChainLink(() => new IfThisPromocodeIsNotAddedToCart(_cafeDB))
-				.AddChainLink(() => new AddPromocodeToCart(_cafeDB))
+				.AddChainLink(() => new AddPromocodeToCartV2Latest(_cafeDB))
 				.AddChainLink(() => new ReturnEmptyOkResult())
 				.RunChainAsync();
 		}

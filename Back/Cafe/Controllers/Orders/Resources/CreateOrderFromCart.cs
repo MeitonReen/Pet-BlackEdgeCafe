@@ -47,8 +47,8 @@ namespace Cafe.Controllers.Orders
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
 				.AddChainLink(() => new IfClientCartIsExists(_cafeDB))
 				.AddChainLink(() => new IfTableSelectedInCart())
-				.AddChainLink(() => new IDishesExistsInCart(_cafeDB))
-				.AddChainLink(() => new CreateOrderFromCart(_appSettings, _cafeDB))
+				.AddChainLink(() => new IDishesExistsInCartV2Latest(_cafeDB))
+				.AddChainLink(() => new CreateOrderFromCartV2Latest(_appSettings, _cafeDB))
 				.AddChainLink(() => new ReturnNewOrderId())
 				.RunChainAsync();
 		}

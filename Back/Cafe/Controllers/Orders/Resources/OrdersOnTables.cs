@@ -26,7 +26,7 @@ namespace Cafe.Controllers.Orders
 		{
 			return await new HandlersChain()
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
-				.AddChainLink(() => new ReturnOrdersOnTables(_cafeDB))
+				.AddChainLink(() => new ReturnOrdersOnTablesV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 	}

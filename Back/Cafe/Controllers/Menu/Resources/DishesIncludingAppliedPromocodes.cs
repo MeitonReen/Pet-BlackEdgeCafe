@@ -29,7 +29,7 @@ namespace Cafe.Controllers.Menu
 			return await new HandlersChain()
 				.AddChainLink(() => new UserIdToContext(_appSettings, HttpContext.User))
 				.AddChainLink(() => new IfClientCartIsExists(_cafeDB))
-				.AddChainLink(() => new ReturnMenuIncludingPromocodes(_cafeDB))
+				.AddChainLink(() => new ReturnMenuIncludingPromocodesV2Latest(_cafeDB))
 				.RunChainAsync();
 		}
 	}
