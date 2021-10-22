@@ -11,14 +11,13 @@ namespace Cafe.Databases.Identity
 	public static class ModelBuilderExtentions
 	{
 		public static void SeedToIdentity(this ModelBuilder modelBuilder,
-			IPasswordHasher<User> passwordHasher, AppSettings appSettings)
+			IPasswordHasher<User> passwordHasher, string adminLogin, string adminPassword)
 		{
 			modelBuilder.Entity<User>().HasData(new User()
 			{
 				Id = new SequentialGuidValueGenerator().Next(null),
-				UserName = appSettings.ServiceAccounts.Admin.Login,
-				PasswordHash = passwordHasher.HashPassword(null,
-					appSettings.ServiceAccounts.Admin.Password)
+				UserName = adminLogin,
+				PasswordHash = passwordHasher.HashPassword(null, adminPassword)
 			});
 		}
 	}

@@ -9,13 +9,23 @@ namespace Cafe.Databases.Identity.Contexts.Implementations
 	public class IdentitySqliteContext : IdentityDatabase
 	{
 		public IdentitySqliteContext(DbContextOptions<IdentitySqliteContext> options,
+			IPasswordHasher<User> passwordHasher, string adminLogin, string adminPassword,
+			string connectionString)
+		: base(options, passwordHasher, adminLogin, adminPassword, connectionString)
+		{
+		}
+		public IdentitySqliteContext(DbContextOptions<IdentitySqliteContext> options,
 			IPasswordHasher<User> passwordHasher, AppSettings appSettings)
-		: base(options, passwordHasher, appSettings)
+		: base(options, passwordHasher, appSettings, appSettings.Databases.Identity
+			.Sqlite.ConnectionString)
 		{
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlite(_appSettings.Databases.Identity.Sqlite.ConnectionString);
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlite(_connectionString);
+			}
 		}
 	}
 }

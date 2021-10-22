@@ -20,5 +20,10 @@ namespace Cafe.Infrastructure.HandlersChain
 			Context = context;
 			return;
 		}
+		public ChainRequest()
+		{
+			Context = new Dictionary<string, object>();
+			return;
+		}
 	}
 }

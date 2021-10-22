@@ -9,17 +9,23 @@ namespace Cafe.Infrastructure.ETagCache.Databases.Contexts.Implementations
 {
 	public partial class ETagCacheMssqlContext : ETagCacheDatabase
 	{
-		private readonly AppSettings _appSettings = null;
-
 		public ETagCacheMssqlContext(DbContextOptions<ETagCacheMssqlContext> options,
 			AppSettings appSettings)
-			: base(options)
+			: base(options, appSettings, appSettings.Databases.Cafe.Mssql
+				.ConnectionString)
 		{
-			_appSettings = appSettings;
+		}
+		public ETagCacheMssqlContext(DbContextOptions<ETagCacheMssqlContext> options,
+			string adminLogin, string adminPassword, string connectionString)
+			: base(options, adminLogin, adminPassword, connectionString)
+		{
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer(_appSettings.Databases.ETagCache.Mssql.ConnectionString);
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlServer(_connectionString);
+			}
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
