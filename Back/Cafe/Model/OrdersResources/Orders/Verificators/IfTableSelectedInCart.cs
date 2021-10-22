@@ -20,7 +20,6 @@ namespace Cafe.Model.OrdersResources.Orders.Verificators
 		{
 			if (clientCart.TableId == null)
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Table in client cart is not selected"));
 				return Task.CompletedTask;

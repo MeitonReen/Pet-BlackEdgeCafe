@@ -36,7 +36,6 @@ namespace Cafe.Model.Shared.Verificators
 				.SingleOrDefaultAsync(Cart => Cart.ClientId == userId);
 			if (clientCart == default(Cart))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.NotFound(new ErrorDTO("Client cart is not found"));
 				return;

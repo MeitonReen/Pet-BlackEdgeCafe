@@ -28,7 +28,6 @@ namespace Cafe.Model.CartResources.Promocodes.Verificators
 					Promocode.IsValid);
 			if (addingPromocode == default(Promocode))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Adding promocode is not found"));
 				return;

@@ -23,7 +23,6 @@ namespace Cafe.Model.CartResources.Dishes.Verificators
 
 			if (AddedDish == default(Databases.Cafe.Model.Dish))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Adding dish is not found"));
 				return;

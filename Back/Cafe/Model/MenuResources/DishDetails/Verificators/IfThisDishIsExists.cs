@@ -27,7 +27,6 @@ namespace Cafe.Model.MenuResources.DishDetails.Verificators
 			dish = await _cafeDB.Dishes.SingleOrDefaultAsync(Dish => Dish.DishId == _dishId);
 			if (dish == default(Dish))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Dish is not found"));
 				return;

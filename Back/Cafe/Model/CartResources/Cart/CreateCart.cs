@@ -20,8 +20,7 @@ namespace Cafe.Model.CartResources.Cart
 		}
 		protected override void GetParamsFromChainRequest(ChainRequest request)
 		{
-			userId = GetParamFromChainRequest<Guid>(GetType().Name,
-				request, nameof(userId));
+			userId = GetParamFromChainRequest<Guid>(GetType().Name, request, nameof(userId));
 			return;
 		}
 		protected override async Task ExecuteAsync(ChainRequest request)

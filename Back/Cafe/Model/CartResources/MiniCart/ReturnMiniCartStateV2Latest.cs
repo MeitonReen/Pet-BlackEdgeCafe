@@ -16,7 +16,7 @@ namespace Cafe.Model.CartResources.MiniCart
 		#region params from chain request
 		private Databases.Cafe.Model.Cart clientCart = null;
 		#endregion
-
+		
 		public ReturnMiniCartStateV2Latest(CafeDatabase cafeDB)
 		{
 			_cafeDB = cafeDB;

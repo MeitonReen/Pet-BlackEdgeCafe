@@ -35,7 +35,6 @@ namespace Cafe.Model.AccountResources.Account.Verificators
 				_password);
 			if (verifyResult == PasswordVerificationResult.Failed)
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Bad login or password"));
 				return Task.CompletedTask;

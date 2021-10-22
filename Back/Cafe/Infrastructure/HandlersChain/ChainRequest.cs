@@ -5,7 +5,7 @@ namespace Cafe.Infrastructure.HandlersChain
 {
 	public class ChainRequest
 	{
-		public ChainProcessingStatus Status { get; set; } = ChainProcessingStatus.Initial;
+		public ChainProcessingStatus Status { get; set; } = ChainProcessingStatus.Failure_exit;
 		public IActionResult Result { get; set; } = null;
 		public Dictionary<string, object> Context { get; set; } = null;
 

@@ -22,7 +22,6 @@ namespace Cafe.Model.AccountResources.Account.Verificators
 
 			if (user != default(User))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Этот логин занят"));
 				return;

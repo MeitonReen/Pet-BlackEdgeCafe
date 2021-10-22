@@ -24,7 +24,6 @@ namespace Cafe.Model.BookedTablesResources.BookedTables.Verificators
 				.SingleOrDefaultAsync(Table => Table.TableId == _tableId);
 			if (BookingTable == default(Table))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Booking table is not found"));
 				return;

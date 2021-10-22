@@ -40,7 +40,7 @@ namespace Cafe.Model.CartResources.Dish
 			await PrepareToUpdateDishesInCartsAsync(_dishId);
 
 			await _cafeDB.SaveChangesAsync();
-			;
+
 			request.Status = ChainProcessingStatus.Success;
 			return;
 		}

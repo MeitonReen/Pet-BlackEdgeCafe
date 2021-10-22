@@ -39,7 +39,6 @@ namespace Cafe.Model.OrdersResources.Orders.Verificators
 
 			if (!dishesInClientCart.Any())
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("No dishes in client cart"));
 				return;
