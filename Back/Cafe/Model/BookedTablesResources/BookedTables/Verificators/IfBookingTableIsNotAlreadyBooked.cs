@@ -26,7 +26,6 @@ namespace Cafe.Model.BookedTablesResources.BookedTables.Verificators
 
 			if (BookingTableIsBooked != default(BookedTable))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Table already is booked"));
 				return;

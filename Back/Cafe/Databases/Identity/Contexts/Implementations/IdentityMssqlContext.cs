@@ -9,13 +9,23 @@ namespace Cafe.Databases.Identity.Contexts.Implementations
 	public class IdentityMssqlContext : IdentityDatabase
 	{
 		public IdentityMssqlContext(DbContextOptions<IdentityMssqlContext> options,
+			IPasswordHasher<User> passwordHasher, string adminLogin, string adminPassword,
+			string connectionString)
+		: base(options, passwordHasher, adminLogin, adminPassword, connectionString)
+		{
+		}
+		public IdentityMssqlContext(DbContextOptions<IdentityMssqlContext> options,
 			IPasswordHasher<User> passwordHasher, AppSettings appSettings)
-		: base(options, passwordHasher, appSettings)
+		: base(options, passwordHasher, appSettings, appSettings.Databases.Identity
+			.Mssql.ConnectionString)
 		{
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer(_appSettings.Databases.Identity.Mssql.ConnectionString);
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlServer(_connectionString);
+			}
 		}
 	}
 }

@@ -27,7 +27,6 @@ namespace Cafe.Model.AccountResources.Account
 
 			if (!res.Succeeded)
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				throw new Exception(res.Errors.Select(Error => Error.Code)
 					.Aggregate((Acc, ErrorCode) => Acc += ErrorCode + ';'));
 			}

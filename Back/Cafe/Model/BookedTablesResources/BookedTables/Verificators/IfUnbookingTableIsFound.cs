@@ -40,7 +40,6 @@ namespace Cafe.Model.BookedTablesResources.BookedTables.Verificators
 					Table.DateTimeATableIsWillBeFree > DateTime.Now);
 			if (unbookATableByClient == default(BookedTable))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator.BadRequest(
 					new ErrorDTO("Unbooking table is not found"));
 				return;

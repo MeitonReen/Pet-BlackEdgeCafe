@@ -9,15 +9,23 @@ namespace Cafe.Databases.Cafe.Context.Implementations
 {
 	public partial class CafeMssqlContext : CafeDatabase
 	{
-		private readonly AppSettings _appSettings = null;
-		public CafeMssqlContext(DbContextOptions<CafeMssqlContext> options, AppSettings appSettings)
-			: base(options)
+		public CafeMssqlContext(DbContextOptions<CafeMssqlContext> options,
+			AppSettings appSettings)
+			: base(options, appSettings, appSettings.Databases.Cafe.Mssql
+				.ConnectionString)
 		{
-			_appSettings = appSettings;
+		}
+		public CafeMssqlContext(DbContextOptions<CafeMssqlContext> options,
+			string adminLogin, string adminPassword, string connectionString)
+			: base(options, adminLogin, adminPassword, connectionString)
+		{
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer(_appSettings.Databases.Cafe.Mssql.ConnectionString);
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlServer(_connectionString);
+			}
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

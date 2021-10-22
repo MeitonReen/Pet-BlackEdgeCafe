@@ -3,22 +3,29 @@ using Cafe.Databases.Cafe.Model;
 using Cafe.Infrastructure.ApplicationSettings.Root;
 using Microsoft.EntityFrameworkCore;
 
-
 #nullable disable
 
 namespace Cafe.Databases.Cafe.Context.Implementations
 {
 	public partial class CafeSqliteContext : CafeDatabase
 	{
-		private readonly AppSettings _appSettings = null;
-		public CafeSqliteContext(DbContextOptions<CafeSqliteContext> options, AppSettings appSettings)
-			: base(options)
+		public CafeSqliteContext(DbContextOptions<CafeSqliteContext> options,
+			AppSettings appSettings)
+			: base(options, appSettings, appSettings.Databases.Cafe.Mssql
+				.ConnectionString)
 		{
-			_appSettings = appSettings;
+		}
+		public CafeSqliteContext(DbContextOptions<CafeSqliteContext> options,
+			string adminLogin, string adminPassword, string connectionString)
+			: base(options, adminLogin, adminPassword, connectionString)
+		{
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlite(_appSettings.Databases.Cafe.Sqlite.ConnectionString);
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlite(_connectionString);
+			}
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

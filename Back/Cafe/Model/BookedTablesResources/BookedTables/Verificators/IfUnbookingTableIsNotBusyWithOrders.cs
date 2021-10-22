@@ -36,7 +36,6 @@ namespace Cafe.Model.BookedTablesResources.BookedTables.Verificators
 				.ToArrayAsync();
 			if (Orders.Any())
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Unbooking table is busy with orders"));
 				return;

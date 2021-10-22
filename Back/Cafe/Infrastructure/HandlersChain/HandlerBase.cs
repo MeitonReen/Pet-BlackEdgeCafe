@@ -16,7 +16,6 @@ namespace Cafe.Infrastructure.HandlersChain
 		{
 			if (request.Context.GetValueOrDefault(paramName) is not toT _paramName)
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				throw new ArgumentException($"In {nameof(className)} = " +
 					$"\"{className}\" {nameof(paramName)} = \"{paramName}\"" +
 					$" is null or not found");

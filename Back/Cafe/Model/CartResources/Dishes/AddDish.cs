@@ -36,7 +36,6 @@ namespace Cafe.Model.CartResources.Dishes
 		}
 		protected override async Task ExecuteAsync(ChainRequest request)
 		{
-
 			PrepareToUpdateClientCart(dishCost,
 				dishCostIncluding_Valid_Applied_Promocodes);
 			PrepareToUpdateDishesInCarts(_dishId, dishCostIncluding_Valid_Applied_Promocodes);

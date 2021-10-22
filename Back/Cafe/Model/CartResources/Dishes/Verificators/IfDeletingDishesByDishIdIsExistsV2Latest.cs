@@ -41,7 +41,6 @@ namespace Cafe.Model.CartResources.Dishes.Verificators
 
 			if (!DishesInClientCart.Any())
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Deleting dishes is not found"));
 				return;

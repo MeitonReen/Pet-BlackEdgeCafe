@@ -9,17 +9,23 @@ namespace Cafe.Infrastructure.ETagCache.Databases.Contexts.Implementations
 {
 	public partial class ETagCacheSqliteContext : ETagCacheDatabase
 	{
-		private readonly AppSettings _appSettings = null;
-
 		public ETagCacheSqliteContext(DbContextOptions<ETagCacheSqliteContext> options,
-			AppSettings appSettings)
-			: base(options)
+				AppSettings appSettings)
+				: base(options, appSettings, appSettings.Databases.Cafe.Mssql
+					.ConnectionString)
 		{
-			_appSettings = appSettings;
+		}
+		public ETagCacheSqliteContext(DbContextOptions<ETagCacheSqliteContext> options,
+			string adminLogin, string adminPassword, string connectionString)
+			: base(options, adminLogin, adminPassword, connectionString)
+		{
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlite(_appSettings.Databases.ETagCache.Sqlite.ConnectionString);
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlite(_connectionString);
+			}
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

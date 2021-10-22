@@ -36,7 +36,6 @@ namespace Cafe.Model.CartResources.TableId.Verificators
 					BT.ClientId == userId);
 			if (CheckBookedTable == default(BookedTable))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("This table is not a booked by client"));
 				return;

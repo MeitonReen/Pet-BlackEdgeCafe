@@ -19,6 +19,7 @@ namespace Cafe.Model.AccountResources.Account
 		protected async override Task ExecuteAsync(ChainRequest chainRequest)
 		{
 			await _httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+			
 			chainRequest.Result = _resultGenerator.Ok();
 			chainRequest.Status = ChainProcessingStatus.Success;
 			return;

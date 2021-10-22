@@ -54,7 +54,6 @@ namespace Cafe.Model.Shared.Verificators
 		}
 		private void Return401UnsetCookie(ChainRequest chainRequest)
 		{
-			chainRequest.Status = ChainProcessingStatus.Failure_exit;
 			chainRequest.Result = _resultGenerator.Unauthorized(new ErrorDTO("Bad cookie"));
 
 			_authCookieOptions.MaxAge = null;

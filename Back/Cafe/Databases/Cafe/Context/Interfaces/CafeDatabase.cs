@@ -1,4 +1,5 @@
 ﻿using Cafe.Databases.Cafe.Model;
+using Cafe.Infrastructure.ApplicationSettings.Root;
 using Microsoft.EntityFrameworkCore;
 
 #nullable disable
@@ -7,9 +8,24 @@ namespace Cafe.Databases.Cafe.Context.Interfaces
 {
 	public abstract class CafeDatabase : DbContext
 	{
-		public CafeDatabase(DbContextOptions options)
-			: base(options)
+		protected string _adminLogin = null;
+		protected string _adminPassword = null;
+		protected string _connectionString = null;
+		public CafeDatabase(DbContextOptions options, string adminLogin,
+			string adminPassword, string connectionString)
+		: base(options)
 		{
+			_adminLogin = adminLogin;
+			_adminPassword = adminPassword;
+			_connectionString = connectionString;
+		}
+		public CafeDatabase(DbContextOptions options, AppSettings appSettings,
+			string connectionString)
+		: base(options)
+		{
+			_adminLogin = appSettings.ServiceAccounts.Admin.Login;
+			_adminPassword = appSettings.ServiceAccounts.Admin.Password;
+			_connectionString = connectionString;
 		}
 		public virtual DbSet<AppliedPromocodesInCart> AppliedPromocodesInCarts { get; set; }
 		public virtual DbSet<AppliedPromocodesInOrder> AppliedPromocodesInOrders { get; set; }

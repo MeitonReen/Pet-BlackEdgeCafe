@@ -40,7 +40,6 @@ namespace Cafe.Model.CartResources.Dish.Verificators
 
 			if (DishInClientCart == default(DishesInCart))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Deleting dish is not found"));
 				return;

@@ -16,7 +16,6 @@ namespace Cafe.Model.AccountResources.Account.Verificators
 		{
 			if (string.IsNullOrEmpty(_password))
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator.BadRequest(new ErrorDTO(
 					"Пароль должен содержать не менее 5 символов"));
 				return Task.CompletedTask;

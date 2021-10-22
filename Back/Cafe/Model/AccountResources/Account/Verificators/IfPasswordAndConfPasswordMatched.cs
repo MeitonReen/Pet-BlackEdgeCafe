@@ -18,7 +18,6 @@ namespace Cafe.Model.AccountResources.Account.Verificators
 		{
 			if (_password != _confirmPassword)
 			{
-				request.Status = ChainProcessingStatus.Failure_exit;
 				request.Result = _resultGenerator
 					.BadRequest(new ErrorDTO("Пароли не совпадают"));
 				return Task.CompletedTask;
