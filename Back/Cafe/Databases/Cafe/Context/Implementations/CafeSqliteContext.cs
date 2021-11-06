@@ -11,7 +11,7 @@ namespace Cafe.Databases.Cafe.Context.Implementations
 	{
 		public CafeSqliteContext(DbContextOptions<CafeSqliteContext> options,
 			AppSettings appSettings)
-			: base(options, appSettings, appSettings.Databases.Cafe.Mssql
+			: base(options, appSettings, appSettings.Databases.Cafe.Sqlite
 				.ConnectionString)
 		{
 		}

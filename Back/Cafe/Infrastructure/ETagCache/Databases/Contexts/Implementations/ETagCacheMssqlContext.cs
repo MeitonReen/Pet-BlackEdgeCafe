@@ -11,7 +11,7 @@ namespace Cafe.Infrastructure.ETagCache.Databases.Contexts.Implementations
 	{
 		public ETagCacheMssqlContext(DbContextOptions<ETagCacheMssqlContext> options,
 			AppSettings appSettings)
-			: base(options, appSettings, appSettings.Databases.Cafe.Mssql
+			: base(options, appSettings, appSettings.Databases.ETagCache.Mssql
 				.ConnectionString)
 		{
 		}

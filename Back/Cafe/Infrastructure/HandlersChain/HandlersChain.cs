@@ -77,13 +77,14 @@ namespace Cafe.Infrastructure.HandlersChain
 		}*/
 		public async Task<IActionResult> RunChainBaseAsync()
 		{
-			for (int i = 0;
-				(i != _handlerCreators.Count) && !_exitFromChain.Contains(_chainRequest.Status);
-				i++)
+			int i = 0;
+			do
 			{
 				await (_handlerCreators[i].Invoke()).HandleAsync(_chainRequest);
+				i++;
 			}
-			;
+			while ((i != _handlerCreators.Count) && !_exitFromChain.Contains(_chainRequest.Status));
+			
 			return _chainRequest.Result;
 		}
 	}
